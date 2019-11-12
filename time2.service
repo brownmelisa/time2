@@ -1,0 +1,16 @@
+[Unit]
+Description=Time2 Timesheet Tracker
+
+[Service]
+Type=simple
+User=time2
+Group=time2
+Restart=on-failure
+Environment=MIX_ENV=prod "PORT=4999"
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/home/time2/time2
+ExecStart=/bin/bash /home/time2/time2/start.sh
+
+[Install]
+WantedBy=multi-user.target
